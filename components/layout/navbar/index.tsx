@@ -4,6 +4,7 @@ import { getMenu } from 'lib/shopify';
 import { Menu } from 'lib/shopify/types';
 import Link from 'next/link';
 import { Suspense } from 'react';
+import ConnectWallet from './connect-wallet';
 import MobileMenu from './mobile-menu';
 import Search, { SearchSkeleton } from './search';
 
@@ -52,7 +53,10 @@ export async function Navbar() {
             <Search />
           </Suspense>
         </div>
-        <div className="flex justify-end md:w-1/3">
+        <div className="flex items-center justify-end gap-4 md:w-1/3">
+          <Suspense fallback={null}>
+            <ConnectWallet />
+          </Suspense>
           <CartModal />
         </div>
       </div>
