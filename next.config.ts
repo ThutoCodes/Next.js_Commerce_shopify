@@ -1,4 +1,5 @@
-export default {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   experimental: {
     ppr: true,
     inlineCss: true,
@@ -15,3 +16,5 @@ export default {
     ]
   }
 };
+
+module.exports = nextConfig;
